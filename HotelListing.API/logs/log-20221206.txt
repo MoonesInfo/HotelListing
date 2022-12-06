@@ -1,0 +1,7 @@
+2022-12-06 10:36:41.666 -06:00 [INF] Now listening on: https://localhost:7225
+2022-12-06 10:36:42.002 -06:00 [INF] Now listening on: http://localhost:5225
+2022-12-06 10:36:42.020 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-06 10:36:42.022 -06:00 [INF] Hosting environment: Development
+2022-12-06 10:36:42.024 -06:00 [INF] Content root path: C:\Users\HERRIS\source\repos\HotelListing\HotelListing.API\
+2022-12-06 12:30:56.428 -06:00 [ERR] Failed executing DbCommand (103ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [HotelListingAPIDb];
