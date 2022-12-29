@@ -2,6 +2,7 @@
 using HotelListing.API.Contracts;
 using HotelListing.API.Data;
 using HotelListing.API.Models.Users;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Identity;
 
 namespace HotelListing.API.Repository
@@ -16,9 +17,22 @@ namespace HotelListing.API.Repository
             this._mapper = mapper;
             this._userManager = userManager;
         }
-        public Task<bool> Register(APIUserDto userDto)
+
+        public async Task<IEnumerable<IdentityError>> Register(APIUserDto userDto)
         {
-            throw new NotImplementedException();
+            var user = _mapper.Map<APIUser>(userDto);
+
+
+            user.UserName = userDto.Email;
+            var result = await _userManager.CreateAsync(user,userDto.Password);
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user,"user");
+            
+            
+            }
+            return result.Errors;
         }
     }
 }
