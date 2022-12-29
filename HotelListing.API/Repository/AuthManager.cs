@@ -9,10 +9,10 @@ namespace HotelListing.API.Repository
 {
     public class AuthManager : IAuthManager
     {
-        private readonly Mapper _mapper;
+        private readonly IMapper _mapper;
         private readonly UserManager<APIUser> _userManager;
 
-        public AuthManager(Mapper mapper,UserManager<APIUser> userManager)
+        public AuthManager(IMapper mapper,UserManager<APIUser> userManager)
         {
             this._mapper = mapper;
             this._userManager = userManager;
