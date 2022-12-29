@@ -23,6 +23,8 @@ namespace HotelListing.API.Configurations
 
             CreateMap<APIUserDto, APIUser>().ReverseMap();
 
+
+
         }
     }
 }
